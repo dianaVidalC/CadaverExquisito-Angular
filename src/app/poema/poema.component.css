@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Satisfy');
+*{
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2{
+  margin: 2em;
+}
+ul{
+  text-align: center;
+}
+ul li{
+  list-style: none;
+}

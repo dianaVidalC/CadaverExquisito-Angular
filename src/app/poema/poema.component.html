@@ -1,0 +1,4 @@
+<h2>Resultado del juego:</h2>
+<ul>
+  <li *ngFor="let i of conjuntoPoemas, let idx = index"><span *ngIf="idx === 0">"</span>{{i}}.<span *ngIf="idx === (conjuntoPoemas.length - 1)">"</span></li>
+</ul>
