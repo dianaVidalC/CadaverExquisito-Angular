@@ -1,0 +1,7 @@
+<h2>Comienza el juego!!!</h2>
+<form [formGroup]="form" (submit)="onSubmit($event)">
+  <label for="poema">Ingrese su poema: </label>
+  <input id="poema" type="text" formControlName="frases">
+  <button type="submit" (click)="guardarPoema()">Agregar</button>
+</form>
+
