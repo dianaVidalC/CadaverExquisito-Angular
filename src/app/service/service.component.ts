@@ -1,5 +1,6 @@
-import {Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AngularFireDatabase } from "angularfire2/database";
 
 @Component({
   selector: 'app-service',
@@ -8,9 +9,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class ServiceComponent implements OnInit {
   form: FormGroup;
-  poemas = [];
-
-  constructor(private fb: FormBuilder) {
+  poemas:any = {};
+  i:number = 1;
+  constructor(private fb: FormBuilder, private angFbase: AngularFireDatabase) {
   }
 
   ngOnInit() {
@@ -20,10 +21,13 @@ export class ServiceComponent implements OnInit {
   }
 
   guardarPoema() {
-    this.poemas.push(this.form.get('frases').value);
-    console.log(this.poemas)
+    this.poemas.id = Date.now();
+    this.angFbase.database.ref('frases/' + this.poemas.id+ '/frase'+this.i).set(this.poemas.frase);
+    this.i = this.i + 1;
   }
-
+  mostrarPoemas(){
+    return this.angFbase.list('frases/');
+  }
   onSubmit() {
     if (this.form.valid) {
       console.log("Form Submitted!");

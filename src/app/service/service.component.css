@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Satisfy');
 *{
-  color: #444;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
 }
 h2{
-  margin: 2em;
+  margin-top: 5em;
 }
-form{
-  text-align: center;
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.container > * {
+  width: 100%;
 }

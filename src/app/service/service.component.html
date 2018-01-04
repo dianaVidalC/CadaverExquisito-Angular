@@ -1,7 +1,9 @@
-<h2>Comienza el juego!!!</h2>
-<form [formGroup]="form" (submit)="onSubmit($event)">
-  <label for="poema">Ingrese su poema: </label>
-  <input id="poema" type="text" formControlName="frases">
-  <button type="submit" (click)="guardarPoema()">Agregar</button>
+<h2 class="mat-display-1">Frase del jugador {{i}}</h2>
+<form class="container" [formGroup]="form" (submit)="onSubmit($event)">
+    <mat-form-field>
+      <textarea matInput placeholder="Frase" formControlName="frases" [(ngModel)]="poemas.frase"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="guardarPoema()">Agregar</button>
+    <button mat-raised-button color="primary" type="submit" (click)="mostrarPoemas()">Resultado Final</button>
 </form>
 
